@@ -47,9 +47,6 @@ INSTALLED_APPS = [
     # Импортируем приложение через которое будут геренрироваться QR коды
     # в список установленных приложений Django
     'sites.apps.SitesConfig',
-
-    # Импортируем стороннюю библиотеку-генератор QR кодов
-    'qr_code',
 ]
 
 MIDDLEWARE = [
@@ -109,19 +106,6 @@ AUTH_PASSWORD_VALIDATORS = [
         'NAME': 'django.contrib.auth.password_validation.NumericPasswordValidator',
     },
 ]
-
-# Кэширование
-CACHES = {
-    'default': {
-        'BACKEND': 'django.core.cache.backends.locmem.LocMemCache',
-    },
-    'qr-code': {
-        'BACKEND': 'django.core.cache.backends.locmem.LocMemCache',
-        'LOCATION': 'qr-code-cache',
-        'TIMEOUT': 3600
-    }
-}
-QR_CODE_CACHE_ALIAS = 'qr-code'
 
 # Internationalization
 # https://docs.djangoproject.com/en/3.1/topics/i18n/
